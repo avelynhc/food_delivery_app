@@ -47,6 +47,13 @@ const Checkout = (props) => {
       return;
     }
     // submit the cart data
+    // transfer data from Checkout components to Cart components
+    props.onConfirm({
+      name: enteredName,
+      street: enteredStreet,
+      city: enteredCity,
+      postalCode: enteredPostalCode,
+    });
   };
 
   const nameControlClasses = `${classes.control} && ${
